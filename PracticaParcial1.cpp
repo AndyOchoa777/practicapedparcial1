@@ -33,6 +33,45 @@ void contar(int numeros[]){
     
 }
 
+void segundo(int numbers[]){
+    int top = 0;
+    int second = 0;
+    int bottom = 101;
+    int secondBottom = 101;
+
+    for (int i = 0; i < 20; i++)
+    {
+        if (numbers[i] > top)
+        {
+            second = top;
+            top = numbers[i];
+        }else if (numbers[i] > second && numbers[i] < top)
+        {
+            second = numbers[i];
+        }
+        
+        if (numbers[i] < bottom)
+        {
+            secondBottom = bottom;
+            bottom = numbers[i];
+        }else if (numbers[i] < secondBottom && numbers[i] > bottom)
+        {
+            secondBottom = numbers[i];
+        }
+        
+        
+
+        
+    }
+
+    cout<<"El segundo numerin mas alto es: "<<second<<endl;
+    cout<<"El segundo numerin mas bajo es:"<<secondBottom<<endl;
+
+    
+}
+
+
+
 
 
 int main(){
@@ -46,6 +85,15 @@ int main(){
     {
         nums[i] = dis(gen);
     }
+
+    for (int i : nums)
+    {
+        cout<<i<<endl;
+    }
+
+    contar(nums);
+    segundo(nums);
+    
 
     
 
